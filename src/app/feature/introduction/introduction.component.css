@@ -1,0 +1,51 @@
+.introduction {
+    width: 100%;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 350%;
+}
+
+h2 {
+    font-size: 300%;
+}
+
+h3 {
+    font-size: 250%;
+}
+
+h4 {
+    font-size: 200%;
+}
+
+h5 {
+    font-size: 150%;
+}
+
+h6 {
+    font-size: 100%;
+}
+
+@keyframes hobbies-blink-cursor {
+    from, to {
+        color : transparent
+    }
+    50% {
+        color : #369;
+    }
+}
+
+.introduction .cursor {
+    animation : hobbies-blink-cursor .75s step-end infinite;
+}

@@ -1,0 +1,15 @@
+.box {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: yellow;
+}
+
+.g-introduction {
+    width: 55%;
+    /*height: 40%;*/
+}
+
+.g-motto {
+    width: 55%;
+}
