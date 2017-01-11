@@ -1,12 +1,12 @@
 /**
  * Created by gale on 17-1-6.
  */
-import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import {HighlightDirective} from "./directives/highlight.directive";
-import {TypewriterDirective} from "./directives/typewriter.directive";
-import {CursorComponent} from "./components/cursor/cursor.component";
+import { HighlightDirective } from "./directives/highlight.directive";
+import { TypewriterDirective } from "./directives/typewriter.directive";
+import { CursorComponent } from "./components/cursor/cursor.component";
 
 @NgModule({
     imports: [
@@ -15,14 +15,15 @@ import {CursorComponent} from "./components/cursor/cursor.component";
     declarations: [
         HighlightDirective,
         TypewriterDirective,
-        CursorComponent
+        CursorComponent,
     ],
     exports: [
         CommonModule,
         HighlightDirective,
         TypewriterDirective,
-        CursorComponent
+        CursorComponent,
     ]
 })
 
-export class SharedModule { }
+export class SharedModule {
+}
