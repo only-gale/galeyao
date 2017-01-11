@@ -1,74 +1,74 @@
-import {Component, trigger, transition, animate, keyframes, style, state} from '@angular/core';
+import { Component, trigger, transition, animate, keyframes, style, state } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [
-      trigger(
-          'slideInDown', [
-              state( 'in', style({
-                transform: 'translateY(0)',
-                visibility: 'visible'
-              })),
-              state( 'out', style({
-                transform: 'translateY(-100%)',
-                visibility: 'hidden'
-              })),
-              transition( 'out => in', animate( 1000, keyframes( [
-                  style( {
-                    transform: 'translate3d(0, -100%, 0)',
-                    visibility: 'visible'
-                  }),
-                  style( {
-                    transform: 'translate3d(0, 0, 0)'
-                  })
-              ]))),
-              transition( 'void => out', animate( 1000, keyframes( [
-                  style( {
-                    transform: 'translate3d(0, 0, 0)',
-                    visibility: 'visible'
-                  }),
-                  style( {
-                    transform: 'translate3d(0, -100%, 0)',
-                    visibility: 'hidden'
-                  })
-            ]))),
-          ]
-      ),
-      trigger(
-          'fadeOut', [
-              state( 'in', style({
-                  opacity: 1
-              })),
-              state( 'out', style({
-                  opacity: 0
-              })),
-              transition( 'out => in', animate( 1000, keyframes( [
-                  style( {
-                      opacity: 0
-                  }),
-                  style( {
-                      opacity: 1
-                  })
-              ]))),
-              transition( 'void => out', animate( 1000, keyframes( [
-                  style( {
-                      opacity: 1
-                  }),
-                  style( {
-                      opacity: 0
-                  })
-              ]))),
-          ]
-      )
-  ]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: [ './app.component.css' ],
+    animations: [
+        trigger(
+            'fadeIn', [
+                state('in', style({
+                    height: '*',
+                    opacity: 1,
+                })),
+                transition('* => in', animate(1500, keyframes([
+                    style({
+                        height: '0',
+                        opacity: 0,
+                    }),
+                    style({
+                        height: '*',
+                        opacity: 1,
+                    })
+                ]))),
+            ]
+        ),
+        trigger(
+            'fadeOut', [
+                state('out', style({
+                    flex: '0 0 0',
+                    height: '0',
+                    opacity: 0,
+                })),
+                transition('* => out', animate(1000, keyframes([
+                    style({
+                        flex: '1 1 100%',
+                        height: '*',
+                        opacity: 1,
+                        offset: 0
+                    }),
+                    style({
+                        flex: '1 1 100%',
+                        height: '*',
+                        opacity: 0.3,
+                        offset: 0.3
+                    }),
+                    style({
+                        flex: '0 0 0',
+                        height: '0',
+                        opacity: 0,
+                        offset: 1
+                    })
+                ]))),
+            ]
+        )
+    ]
 })
 export class AppComponent {
-  constructor() {}
-  isDone: boolean = false;
+    constructor() {
+    }
 
-  onMottoDone( isDone: boolean ): void {
-    this.isDone = !isDone;
-  }
+    isMottoDone: boolean = false;
+    isMottoLeft: boolean = false;
+
+    onMottoDone( isDone: boolean ): void {
+        this.isMottoDone = isDone;
+    }
+
+    onMottoLeft( e ): void {
+        let toState = e.toState;
+        if ( 'out' === toState ) {
+            this.isMottoLeft = true;
+        }
+    }
 }
