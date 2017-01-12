@@ -1,12 +1,12 @@
-<div class="introduction"  g-typewriter [contents]="hobbies" [erasable]="true" [inline]="true" [duration]="1500">
-  <h1 myHighlight [highlightColor]="'yellow'">Hello</h1>
-  <h2><span>How's it going? My name is Gale</span></h2>
-  <h2><span>I'm a Skilled Technologist</span></h2>
-  <h3><span>I work in Shanghai</span></h3>
-  <h3><span>I'm from Shaanxi Province</span></h3>
-  <h3>
-    I like
-    <span class="wrap"></span>
-    <g-cursor>|</g-cursor>
-  </h3>
+<div class="introduction">
+    <h1>Hello</h1>
+    <h2>How's it going? My name is <span class="name">Gale</span></h2>
+    <h2>I'm a <span>Skilled Technologist</span></h2>
+    <h3>I work in <span>Shanghai</span></h3>
+    <h3>I'm from <span>Shaanxi</span></h3>
+    <h4 g-typewriter [contents]="hobbies" [erasable]="true" [inline]="true" [duration]="1000">
+        I like
+        <span class="wrap"></span>
+        <g-cursor>|</g-cursor>
+    </h4>
 </div>

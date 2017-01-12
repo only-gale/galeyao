@@ -1,6 +1,14 @@
 .introduction {
-    width: 100%;
-    overflow: hidden;
+    width    : 100%;
+    overflow : hidden;
+}
+
+.introduction .name {
+    color : darkgoldenrod;
+}
+
+.introduction .wrap {
+    color : #A7F016;
 }
 
 h1,
@@ -9,32 +17,33 @@ h3,
 h4,
 h5,
 h6 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
+    color       : ghostwhite;
+    font-family : Arial, Helvetica, sans-serif;
+    margin      : 0 0 0.67em 0;
 }
 
 h1 {
-    font-size: 350%;
+    font-size : 5em;
 }
 
 h2 {
-    font-size: 300%;
+    font-size : 300%;
 }
 
 h3 {
-    font-size: 250%;
+    font-size : 250%;
 }
 
 h4 {
-    font-size: 200%;
+    font-size : 200%;
 }
 
 h5 {
-    font-size: 150%;
+    font-size : 150%;
 }
 
 h6 {
-    font-size: 100%;
+    font-size : 100%;
 }
 
 @keyframes hobbies-blink-cursor {
@@ -42,7 +51,7 @@ h6 {
         color : transparent
     }
     50% {
-        color : #369;
+        color : ghostwhite;
     }
 }
 
