@@ -1,24 +1,27 @@
 import { Component, OnInit, ElementRef, ViewEncapsulation } from '@angular/core';
 import { IntroductionService } from "./introduction.service";
-import { TypewriterContent } from "../../shared/po/typewriter.content";
+import { TypewriterService, TypewriterContent } from "ng2-typewriter";
 
 @Component({
     selector: 'g-introduction',
     templateUrl: './introduction.component.html',
     styleUrls: [ './introduction.component.css' ],
-    encapsulation: ViewEncapsulation.None,
 })
 export class IntroductionComponent implements OnInit {
 
-    constructor( private el: ElementRef, private introductionService: IntroductionService ) { }
+    constructor( private el: ElementRef, private introductionService: IntroductionService, private typewriterService: TypewriterService) { }
 
     ngOnInit() {
         const hostElem = this.el.nativeElement;
         this._target = hostElem.querySelector('span.wrap');
-        this.hobbies = this.introductionService.getHobbies() || this.hobbies;
+        this.hobbies = this._formatHobbies(this.introductionService.getHobbies()) || this.hobbies;
     }
 
     public hobbies: TypewriterContent[] = [];
 
     private _target: Element;
+
+    private _formatHobbies(hobbies: string[]): TypewriterContent[] {
+        return this.typewriterService.format(hobbies);
+    }
 }

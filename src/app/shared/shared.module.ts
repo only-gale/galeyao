@@ -5,8 +5,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { HighlightDirective } from "./directives/highlight.directive";
-import { TypewriterDirective } from "./directives/typewriter.directive";
-import { CursorComponent } from "./components/cursor/cursor.component";
 
 @NgModule({
     imports: [
@@ -14,14 +12,10 @@ import { CursorComponent } from "./components/cursor/cursor.component";
     ],
     declarations: [
         HighlightDirective,
-        TypewriterDirective,
-        CursorComponent,
     ],
     exports: [
         CommonModule,
         HighlightDirective,
-        TypewriterDirective,
-        CursorComponent,
     ]
 })
 

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TypewriterContent } from "../../shared/po/typewriter.content";
 
 @Injectable()
 export class IntroductionService {
@@ -15,11 +14,7 @@ export class IntroductionService {
         'Movies.'
     ];
 
-    public getHobbies() {
-        return this.formatHobbies(this._default_hobbies);
-    }
-
-    private formatHobbies( hobbies: string[] ): TypewriterContent[] {
-        return hobbies.map(( v: string ) => new TypewriterContent(v));
+    public getHobbies(): string[] {
+        return this._default_hobbies;
     }
 }

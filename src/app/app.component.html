@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<div fxLayoutAlign="center center" class="box">
+    <div fxLayout="column" fxLayoutAlign="center center" class="box">
+        <div fxFlex="1 1 60%" fxFlexAlign="center" fxFlexOrder="1" class="g-introduction" *ngIf="isMottoLeft"
+             [@fadeIn]="'in'">
+            <g-introduction></g-introduction>
+        </div>
+        <div fxFlex="1 1 60%" fxFlexAlign="center" fxFlexOrder="2" class="g-motto"
+             [@fadeOut]="isMottoDone ? 'out' : 'void'" (@fadeOut.done)="onMottoLeft($event)">
+            <g-motto *ngIf="!isMottoLeft" (afterDone)="onMottoDone( $event )"></g-motto>
+        </div>
+    </div>
+</div>

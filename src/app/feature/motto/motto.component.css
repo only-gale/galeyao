@@ -10,17 +10,23 @@
 .motto {
     font-family    : 'Waiting for the Sunrise', cursive;
     font-size      : 30px;
-    line-height    : 2.5em;
+    line-height    : 3em;
     letter-spacing : 6px;
     font-weight    : bold;
 }
 
-.motto .cursor {
+.motto /deep/ .cursor {
+    font-family : Arial, Helvetica, sans-serif;
     animation : motto-blink-cursor .75s step-end infinite;
+    line-height    : inherit;
 }
 
-.motto .special-typewriter {
+.motto /deep/ .special-typewriter {
     color       : darkred;
     font-family : Arial, Helvetica, sans-serif;
     font-weight : bolder;
+}
+
+.motto /deep/ .wrap {
+    display: inline;
 }

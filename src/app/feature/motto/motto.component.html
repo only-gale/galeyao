@@ -1,5 +1,3 @@
-<div class="motto" g-typewriter [contents]="motto" [erasable]="false" [inline]="false" [decorable]="true"
-     [duration]="800" (isDone)="onDone($event)">
-    <span class="wrap"></span>
-    <g-cursor [activated]="!isDone">_</g-cursor>
+<div class="motto">
+    <typewriter [contents]="motto" [cursor]="'|'" [cursorDelay]="3000" (afterDone)="onDone( $event )" ></typewriter>
 </div>

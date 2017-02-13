@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { TypewriterContent } from "../../shared/po/typewriter.content";
 
 @Injectable()
 export class MottoService {
@@ -16,16 +15,6 @@ export class MottoService {
     ];
 
     public getMotto() {
-        return this.formatMotto(this._default);
-    }
-
-    private formatMotto( motto: string[] ): TypewriterContent[] {
-        return motto.map(( v: string, i: number ) => {
-            let tc: TypewriterContent = new TypewriterContent(v);
-            if ( i == 1 ) {
-                tc.setSpecialWord('10').setIterable(true);
-            }
-            return tc;
-        });
+        return this._default;
     }
 }
